@@ -27,7 +27,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    /* min-width: 600px; */
 }
 .question{
     display: flex;
@@ -61,7 +60,8 @@
 }
 .question__answer__list{
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
 }
 .question__answer{
     font-style: normal;
@@ -76,6 +76,7 @@
 .question__answer__list ul li {
     margin-bottom: 10px;
 }
+
 
 /* Кнопка */
 .cta {
@@ -133,4 +134,10 @@
    
 .cta:active {
     transform: scale(0.95);
+}
+
+
+/* Блок с результатами ответа */
+.result {
+    display: none;
 }

@@ -7,47 +7,100 @@
     <title>King_Quiz</title>
 
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="body quiz__body">
     <div class="container quiz__container">
         <h1 class="quiz__header">Узнать стоимость сайта</h1>
+
+        <!-- Радио вопрос -->
         <div class="quiz__question question">
             <div class="question__image">
                 <img src="img/text photo.jpg" alt="">
             </div>
             <div class="question__text p-30">
-                <h3 class="question__question pb-20">Какие примеры сайтов нравятся клиенту?</h3>
+                <h3 class="question__question pb-20">Вопрос 1?</h3>
                 <div class="question__answer__list">
-                    <ul>
-                        <li>
-                            <input type="radio" id="q1a" name="q1" value="a" />
-                            <label class="question__answer" for="q1a">Option A</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="q1b" name="q1" value="b" />
-                            <label class="question__answer" for="q1b">Option B</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="q1c" name="q1" value="c" />
-                            <label class="question__answer" for="q1c">Option C</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="q1d" name="q1" value="c" />
-                            <label class="question__answer" for="q1d">Option D</label>
-                        </li>
-                    </ul>
+                    <label class="question__answer"><input type="radio" name="q1" value="Option A"> Option A</label>
+                    <label class="question__answer"><input type="radio" name="q1" value="Option B"> Option B</label>
+                    <label class="question__answer"><input type="radio" name="q1" value="Option C"> Option C</label>
+                    <label class="question__answer"><input type="radio" name="q1" value="Option D"> Option D</label>
                 </div>
-                <div class="question__button">
-                    <button class="cta">
-                        <span>Следующий вопрос</span>
-                        <svg viewBox="0 0 13 10" height="10px" width="15px">
-                          <path d="M1,5 L11,5"></path>
-                          <polyline points="8 1 12 5 8 9"></polyline>
-                        </svg>
-                    </button>
-                </div>
+                <button class="cta question__button">
+                    <span>Следующий вопрос</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </button>
             </div>
         </div>
+
+        <!-- Вопрос с input -->
+        <div class="quiz__question question">
+            <div class="question__image">
+                <img src="img/text photo.jpg" alt="">
+            </div>
+            <div class="question__text p-30">
+                <h3 class="question__question pb-20">Вопрос 2?</h3>
+                <div class="question__answer__list">
+                    <input class="question__answer" type="text" name="q2" placeholder="hello world" required/>
+                </div>
+                <button class="cta question__button">
+                    <span>Следующий вопрос</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Вопрос с input -->
+        <div class="quiz__question question">
+            <div class="question__image">
+                <img src="img/text photo.jpg" alt="">
+            </div>
+            <div class="question__text p-30">
+                <h3 class="question__question pb-20">Вопрос 3?</h3>
+                <div class="question__answer__list">
+                    <input class="question__answer" type="text" name="q3" placeholder="hello world" required/>
+                </div>
+                <button class="cta question__button">
+                    <span>Следующий вопрос</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Вопрос с input -->
+        <div class="quiz__question question">
+            <div class="question__image">
+                <img src="img/text photo.jpg" alt="">
+            </div>
+            <div class="question__text p-30">
+                <h3 class="question__question pb-20">Вопрос 4?</h3>
+                <div class="question__answer__list">
+                    <input class="question__answer" type="text" name="q4" placeholder="hello world" required/>
+                </div>
+                <button class="cta question__button">
+                    <span>Следующий вопрос</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                        <path d="M1,5 L11,5"></path>
+                        <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Блок с результатми ответа -->
+        <div class="result">
+        </div>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
