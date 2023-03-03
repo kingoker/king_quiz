@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #1D1D1F;
+}
+.p-30{
+    padding: 30px;
+}
+.pb-20{
+    padding-bottom: 20px;
+}
+.container{
+    margin: auto 20px;
+}
+
+.quiz__body{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F5F5F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quiz__container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.question{
+    display: flex;
+    flex-wrap: wrap;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+}
+.question__image{
+    width: 100%;
+    height: 300px;
+}
+.question__image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 18px;
+}
+.question__text{
+    width: 100%;
+}
+.quiz__header{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 32px;
+}
+.question__question{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 21px;
+}
+.question__answer__list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.question__answer{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+}
+.question__answer__list ul {
+    list-style: none;
+    padding-left: 0;
+}
+.question__answer__list ul li {
+    margin-bottom: 10px;
+}
+.question__answer__text {
+    height: 45px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1.5px solid lightgrey;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+}
+.question__answer__text:hover {
+    border: 2px solid lightgrey;
+    box-shadow: 0px 0px 20px -17px;
+}
+.question__answer__text:active {
+    transform: scale(0.95);
+}
+.question__answer__text:focus {
+    border: 2px solid grey;
+}
+
+
+/* Кнопка */
+.cta {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    margin-top: 20px;
+}
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50px;
+    background: #b1dae7;
+    width: 45px;
+    height: 45px;
+    transition: all 0.3s ease;
+}
+   
+.cta span {
+    position: relative;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: #234567;
+}
+   
+.cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #234567;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+   
+.cta:hover:before {
+    width: 100%;
+    background: #b1dae7;
+}
+   
+.cta:hover svg {
+    transform: translateX(0);
+}
+   
+.cta:active {
+    transform: scale(0.95);
+}
+
+
+/* Прогресс бар */
+/* Стили для прогресс бара */
+#quiz-progress {
+    width: 100%;
+    height: 20px;
+    margin-bottom: 20px;
+    transition: all 0.5s ease-in-out;
+}
+
+#quiz-progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+#quiz-progress::-webkit-progress-value {
+    background-color: #4CAF50;
+    border-radius: 5px;
+}
+  
+
+
+/* Блок с результатами ответа */
+.result {
+    display: none;
+}
