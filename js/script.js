@@ -20,13 +20,14 @@ $('.question__button').on('click', function() {
     $progressBar.attr('value', progressValue);
 
     // Добавляем ответ на предыдущий вопрос в блок #results
-    var $answer = $currentQuestion.find(':checked, :text').val();
-    $('.result').append('<p>' + $answer + '</p>');
+    // var $answer = $currentQuestion.find(':checked, :text').val();
+    // $('.result').append('<p>' + $answer + '</p>');
 
     if ($currentQuestion.next('.question').length === 0) {
         // Если это был последний вопрос, показываем блок с результатами
+        $('#quiz-progress').hide();
         $('.result').show();
-        $('.quiz__header').text('Ваши ответы:');
+        $('.quiz__header').text('Осталось только получить подарок:');
     }
   } else {
     // Иначе показываем сообщение об ошибке

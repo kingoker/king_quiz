@@ -10,10 +10,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body class="body quiz__body">
+
+    <div class="background__img">
+        <img src="img/bg.jpg" alt="">
+    </div>
+
     <div class="container quiz__container">
         <h1 class="quiz__header">Узнать стоимость сайта</h1>
         <progress id="quiz-progress" value="0" max="100"></progress>
-
 
         <!-- Радио вопрос -->
         <div class="quiz__question question">
@@ -46,7 +50,7 @@
             <div class="question__text p-30">
                 <h3 class="question__question pb-20">Вопрос 2?</h3>
                 <div class="question__answer__list">
-                    <input class="question__answer question__answer__text" type="text" name="q2" placeholder="hello world" required/>
+                    <input class="question__answer input__question__answer question__answer__text" type="text" name="q2" placeholder="hello world" required/>
                 </div>
                 <button class="cta question__button">
                     <span>Следующий вопрос</span>
@@ -66,7 +70,7 @@
             <div class="question__text p-30">
                 <h3 class="question__question pb-20">Вопрос 3?</h3>
                 <div class="question__answer__list">
-                    <input class="question__answer question__answer__text" type="text" name="q3" placeholder="hello world" required/>
+                    <input class="question__answer input__question__answer question__answer__text" type="text" name="q3" placeholder="hello world" required/>
                 </div>
                 <button class="cta question__button">
                     <span>Следующий вопрос</span>
@@ -86,7 +90,7 @@
             <div class="question__text p-30">
                 <h3 class="question__question pb-20">Вопрос 4?</h3>
                 <div class="question__answer__list">
-                    <input class="question__answer question__answer__text" type="text" name="q4" placeholder="hello world" required/>
+                    <input class="question__answer input__question__answer question__answer__text" type="text" name="q4" placeholder="hello world" required/>
                 </div>
                 <button class="cta question__button">
                     <span>Следующий вопрос</span>
@@ -98,8 +102,29 @@
             </div>
         </div>
 
-        <!-- Блок с результатми ответа -->
+        <!-- Блок с результатми ответа -->        
         <div class="result">
+            <form class="result__form">
+                <label class="question__answer" for="name">Имя:</label> <br>
+                <input class="question__answer input__question__answer question__answer__text" type="text" id="name" name="name" required><br><br>
+                <label class="question__answer" for="phone">Телефон:</label> <br>
+                <input class="question__answer input__question__answer question__answer__text" type="tel" id="phone" name="phone" required><br><br>
+                
+                <div class="socialSchoose">
+                    <label class="question__answer socialSchoose__header">Где вам удобнее получить подарок?</label>
+                    <input class="result__radio" type="radio" id="telegram" name="social" value="telegram">
+                    <label class="question__answer radio__telegram" class="question__answer" for="telegram"><i class="bi bi-telegram"></i></label>
+                    <input class="result__radio" type="radio" id="instagram" name="social" value="instagram">
+                    <label class="question__answer radio__instagram" for="instagram"><i class="bi bi-instagram"></i></label><br><br>    
+                </div>
+
+                <label class="question__answer" for="social">Никнейм или ссылка:</label> <br>
+                <input class="question__answer input__question__answer question__answer__text" type="text" id="social" name="name" required><br><br>
+
+                <button class="form_question__button" type="submit">
+                    Получить подарок <i class="bi bi-gift"></i>
+                </button>
+              </form>
         </div>
     </div>
 
