@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Quiz.apps.QuizConfig',
-    'nested_inline'
+    'nested_inline',
 ]
 
 MIDDLEWARE = [

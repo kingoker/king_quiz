@@ -12,7 +12,9 @@ class CloseQuestionsAdmin(NestedModelAdmin):
    model = CloseQuestions
    inlines = [RadioTextAdmin]
 
-
+class GiftsAdmin(admin.StackedInline):
+    model = Gifts
+    extra = 0
 
 class CloseQuestionsForInlineAdmin(NestedStackedInline):
     model = CloseQuestions
@@ -33,5 +35,10 @@ class QuizzesAdmin(NestedModelAdmin):
    inlines = [OpenQuestionsAdmin,CloseQuestionsForInlineAdmin,]
 
 
+class CustomersAdmin(admin.ModelAdmin):
+   inlines = [GiftsAdmin]
+
+
 admin.site.register(Quizzes, QuizzesAdmin)
 admin.site.register(CloseQuestions, CloseQuestionsAdmin)
+admin.site.register(Customers, CustomersAdmin)
