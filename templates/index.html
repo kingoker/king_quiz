@@ -1,0 +1,101 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King_Quiz</title>
+
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body class="body quiz__body">
+
+    <div class="background__img">
+        <img src="{% static 'img/bg.jpg' %}" alt="">
+    </div>
+
+    <div class="container quiz__container">
+        <h1 class="quiz__header">Узнать стоимость сайта</h1>
+        <progress id="quiz-progress" value="0" max="100"></progress>
+
+        <!-- Радио вопрос -->
+
+        {%for question in quizzes_list%}
+            {%if question.type == 'radio' %}
+                <div class="quiz__question question">
+                    <div class="question__image">
+                        <img src="{% static 'img/text photo.jpg' %}" alt="">
+                    </div>
+                    <div class="question__text p-30">
+                        <h3 class="question__question pb-20">{{question.questionText}}</h3>
+                        <div class="question__answer__list">
+                            
+                            {%for radio in question.answer%}
+                                <label class="question__answer"><input type="radio" name="q1" value="{{radio.radioText}}">{{radio.radioText}}</label>
+                            {%endfor%}
+                        </div>
+                        <button class="cta question__button">
+                            <span>Следующий вопрос</span>
+                            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            {% elif question.type == 'open' %}
+                <div class="quiz__question question">
+                    <div class="question__image">
+                        <img src="img/text photo.jpg" alt="">
+                    </div>
+                    <div class="question__text p-30">
+                        <h3 class="question__question pb-20">{{question.questionText}}</h3>
+                        <div class="question__answer__list">
+                            <input class="question__answer input__question__answer question__answer__text" type="text" name="q2" placeholder="hello world" required/>
+                        </div>
+                        <button class="cta question__button">
+                            <span>Следующий вопрос</span>
+                            <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                <path d="M1,5 L11,5"></path>
+                                <polyline points="8 1 12 5 8 9"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+            {%endif%}
+        {%endfor%}
+
+        <!-- Блок с результатми ответа -->        
+        <div class="result">
+            <form class="result__form">
+                <label class="question__answer" for="name">Имя:</label> <br>
+                <input class="question__answer input__question__answer question__answer__text" type="text" id="name" name="name" required><br><br>
+                <label class="question__answer" for="phone">Телефон:</label> <br>
+                <input class="question__answer input__question__answer question__answer__text" type="tel" id="phone" name="phone" required><br><br>
+                
+                <div class="socialSchoose">
+                    <label class="question__answer socialSchoose__header">Где вам удобнее получить подарок?</label>
+                    <input class="result__radio" type="radio" id="telegram" name="social" value="telegram">
+                    <label class="question__answer radio__telegram" class="question__answer" for="telegram"><i class="bi bi-telegram"></i></label>
+                    <input class="result__radio" type="radio" id="instagram" name="social" value="instagram">
+                    <label class="question__answer radio__instagram" for="instagram"><i class="bi bi-instagram"></i></label><br><br>    
+                </div>
+
+                <label class="question__answer" for="social">Никнейм или ссылка:</label> <br>
+                <input class="question__answer input__question__answer question__answer__text" type="text" id="social" name="name" required><br><br>
+
+                <button class="form_question__button" type="submit">
+                    Получить подарок <i class="bi bi-gift"></i>
+                </button>
+              </form>
+        </div>
+    </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
